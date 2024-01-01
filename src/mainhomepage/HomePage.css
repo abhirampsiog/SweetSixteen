@@ -1,0 +1,181 @@
+
+.hero-page-main {
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+.hero-page {
+  animation: fade-in-text 3s ease-in-out forwards;
+}
+
+.parallax-section {
+  display: grid; /* Change display to grid */
+  grid-template-columns: repeat(4, 1fr); /* Set up a 4-column grid for the parallax section */
+  width: 100%;
+  height: 50vh;
+  
+}
+
+.airline {
+  width: 100%; 
+  height: 100%;
+  display: grid; 
+  place-items: center; 
+  padding: 6px;
+  background-color: rgb(46, 44, 44);
+}
+
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(99, 112, 107, 0.2);
+}
+
+.full-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  background-size: cover;
+  border-radius: 5px;
+  /* padding: 10px; */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  
+  transition: opacity 0.3s ease;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.image-overlay img {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  /* filter: blur(5px); */
+}
+
+.image-overlay h2 {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  font-size: large;
+  color: white;
+  z-index: 3;
+  transition: transform 0.3s ease; /* Add a transition for smooth movement */
+}
+
+.image-overlay p {
+  position: absolute;
+  bottom: 0;
+  font-size: large;
+  color: white;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Transition for opacity */
+}
+
+.image-overlay:hover img {
+  filter: blur(0); /* Clear the blur on the hovered image */
+  opacity: 0.8; 
+}
+/* .image-overlay:hover {
+} */
+.image-overlay:hover h2 {
+  top:30% ;
+  left: 20%;
+  font-size: 2rem; 
+  font-weight: bolder;
+  z-index: 10;
+  color: rgb(0, 255, 132);
+  opacity: 1; 
+  
+}
+
+.image-overlay:hover p {
+  opacity: 1; 
+  top:40%;
+  left: 20%;
+  z-index: 10;
+  font-weight: bold;
+  color: rgb(29, 149, 91);
+}
+
+.image-overlay:hover .full-image {
+  transform: scale(1.1);
+}
+
+
+.fullscreen-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.responsive-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 2;
+  transition: opacity 2s ease-in-out;
+  z-index: 1; /* Ensure the text overlay is above the video */
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: white;
+}
+
+
+@keyframes fade-in-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 769px) {
+  .parallax-section {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    width: 100%;
+    height: 50vh;
+  }
+}
