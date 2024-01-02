@@ -15,7 +15,7 @@ export const airlinesData = [
     {
       name: 'Abhiram Airlines',
       img: img2, // Replace with actual logo URL
-      link: "http://192.168.10.89:83/api/",
+      link: "http://192.168.10.94:83/api/",
       text: 'This is my website',
     },
     {
